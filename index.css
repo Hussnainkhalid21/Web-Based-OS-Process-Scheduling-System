@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #0B1020;
+  --foreground: #F8FAFC;
+  --card: rgba(255, 255, 255, 0.05);
+  --card-border: rgba(255, 255, 255, 0.08);
+  --muted: #94A3B8;
+  --border: rgba(255, 255, 255, 0.08);
+  --glass: rgba(255, 255, 255, 0.1);
+  --sidebar-bg: rgba(15, 23, 42, 0.72);
+}
+
+@layer base {
+  * { @apply border-white/[0.08]; }
+  body {
+    @apply font-sans text-[#F8FAFC] antialiased;
+    background: linear-gradient(to bottom, #0B1020, #111827);
+    min-height: 100vh;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-white/[0.05] border border-white/[0.08] rounded-2xl;
+  }
+  .card-header {
+    @apply px-5 py-4 border-b border-white/[0.06] text-sm font-semibold;
+  }
+  .btn {
+    @apply inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-sm font-semibold cursor-pointer border-none transition-all duration-150;
+  }
+  .btn-primary {
+    @apply btn bg-[#F8FAFC] text-[#0B1020] hover:opacity-90 disabled:opacity-40 disabled:cursor-not-allowed;
+  }
+  .btn-ghost {
+    @apply btn bg-transparent text-[#94A3B8] border border-white/[0.08] hover:bg-white/[0.06] hover:text-[#F8FAFC];
+  }
+  .btn-glass {
+    @apply btn bg-white/10 text-[#F8FAFC] border border-white/[0.05] hover:bg-white/[0.15];
+  }
+  .btn-danger {
+    @apply btn bg-red-900/60 text-red-400 border border-red-900/30 hover:bg-red-900/80;
+  }
+  .inp {
+    @apply w-full px-3 py-2 rounded-xl border border-white/[0.08] bg-black/20 text-[#F8FAFC] text-sm outline-none transition-colors placeholder:text-slate-500/50 focus:border-white/20;
+  }
+  .field-label {
+    @apply block text-[11px] font-semibold uppercase tracking-wider text-[#94A3B8] mb-1;
+  }
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-semibold border;
+  }
+  .badge-blue { @apply bg-blue-500/10 text-blue-400 border-blue-500/20; }
+  .badge-green { @apply bg-emerald-500/10 text-emerald-400 border-emerald-500/20; }
+  .badge-red { @apply bg-red-500/10 text-red-400 border-red-500/20; }
+  .badge-slate { @apply bg-slate-500/10 text-slate-400 border-slate-500/15; }
+}
